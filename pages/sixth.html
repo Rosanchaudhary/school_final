@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Vite App</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js"></script>
+  </head>
+  <body class="bg-[#215E94] w-screen h-screen">
+    <div
+      class="h-[100px] w-full flex flex-row justify-between items-center px-[50px]"
+    >
+      <div
+        class="bg-white h-[50px] w-[100px] rounded-full flex flex-col justify-center items-center"
+      >
+        <h1 class="text-[#215E94] font-bold text-[20px]">BACK</h1>
+      </div>
+      <a href="./seventh.html">
+        <div
+          class="bg-white h-[50px] w-[160px] rounded-full flex flex-col justify-center items-center"
+        >
+          <h1 class="text-[#215E94] font-bold text-[20px]">MAIN MENU</h1>
+        </div></a
+      >
+    </div>
+    <div class="flex flex-row justify-center items-center">
+      <div
+        class="h-[459px] w-[509px] bg-[#8facc7] drop-shadow-[0_3px_19px_rgba(0,0,0,0.16)] border border-[#707070] rounded-3xl flex flex-col justify-between items-center p-[30px]"
+      >
+        <div class="dropdown">
+          <div class="dropdown-toggle" onclick="toggleDropdown()">
+            Select Form Id
+          </div>
+          <div class="dropdown-menu" id="myDropdown"></div>
+        </div>
+        <a href="./seventh.html">
+          <div
+            class="w-[250px] h-[60px] bg-[#d4e0e8] border-[4px] border-[#707070] rounded-full flex flex-row justify-center items-center"
+          >
+            <h1 class="text-[#215E94] font-bold text-[40px]">NEXT</h1>
+          </div></a
+        >
+      </div>
+    </div>
+    <script>
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      var group = getParameterByName("group");
+      const options = [
+        { value: "TG", text: "TG" },
+        { value: "AD", text: "AD" },
+        { value: "MS", text: "MS" },
+        { value: "AH", text: "AH" },
+      ];
+      const options8 = [
+        { value: "CB", text: "CB" },
+        { value: "RK", text: "RK" },
+        { value: "CW", text: "CW" },
+        { value: "MB", text: "MB" },
+      ];
+      const options9 = [
+        { value: "YB", text: "YB" },
+        { value: "RK", text: "RK" },
+        { value: "WI", text: "WI" },
+        { value: "JOD", text: "JOD" },
+      ];
+      const options10 = [
+        { value: "ML", text: "ML" },
+        { value: "LG", text: "LG" },
+        { value: "PB", text: "PB" },
+        { value: "HN", text: "HN" },
+      ];
+      const options11 = [
+        { value: "PH", text: "PH" },
+        { value: "OJ", text: "OJ" },
+        { value: "US", text: "US" },
+        { value: "WR", text: "WR" },
+      ];
+
+      const dropdown = document.getElementById("myDropdown");
+      function setTheOptions(listOfOptions) {
+        listOfOptions.forEach((option) => {
+          const item = document.createElement("div");
+          item.classList.add("dropdown-item");
+          item.innerText = option.text;
+          item.addEventListener("click", () => {
+            selectOption(option.value);
+          });
+          dropdown.appendChild(item);
+        });
+      }
+      console.log("The group is t");
+      console.log(group);
+      if (group == 7) {
+        setTheOptions(options);
+      } else if (group == 8) {
+        setTheOptions(options8);
+      } else if (group == 9) {
+        setTheOptions(options9);
+      } else if (group == 10) {
+        setTheOptions(options10);
+      } else if (group == 11) {
+        setTheOptions(options11);
+      } else if (group == 12) {
+        setTheOptions(options12);
+      } else {
+        setTheOptions(options);
+      }
+    </script>
+  </body>
+</html>
